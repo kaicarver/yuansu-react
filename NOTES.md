@@ -22,5 +22,11 @@ https://stackoverflow.com/questions/59188624/template-not-provided-using-create-
 and failing, I ended up doing this which finally got me ok:
 
 ```bash
-1437  npm uninstall -g create-react-app                                          1438  locate "create-react-app"                                        1439  rm -rf /home/kai/.nvm/versions/node/v12.13.1/bin/create-react-app /home/kai/.nvm/versions/node/v12.13.1/lib/node_modules/create-react-app /home/kai/node_modules/create-react-app  /home/kai/node_modules/.bin/create-react-app                                          1440  locate "create-react-app"                                        1441  ls `locate "create-react-app"`                                       1442  npm uninstall -g create-react-app                                          1443  npx create-react-app yuansu-react      
+1437  npm uninstall -g create-react-app
+1438  locate "create-react-app"
+1439  rm -rf /home/kai/.nvm/versions/node/v12.13.1/bin/create-react-app /home/kai/.nvm/versions/node/v12.13.1/lib/node_modules/create-react-app /home/kai/node_modules/create-react-app  /home/kai/node_modules/.bin/create-react-app
+1440  locate "create-react-app"
+1441  ls `locate "create-react-app"`
+1442  npm uninstall -g create-react-app
+1443  npx create-react-app yuansu-react      
 ```
