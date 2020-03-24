@@ -11,6 +11,9 @@ class TodoApp extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    document.title = "Kai's React App"
+  }
   render() {
     return (
       <div>
