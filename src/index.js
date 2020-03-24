@@ -15,11 +15,11 @@ class TodoApp extends React.Component {
     return (
       <div>
         <h3>TODO List</h3>
-         <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="new-todo">
             What needs to be done?
           </label>
-          <br/>
+          <br />
           <input
             id="new-todo"
             onChange={this.handleChange}
@@ -65,7 +65,7 @@ class TodoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <li key={item.id}><span>{i+1}.</span> {item.text}</li>
+          <li key={item.id}><span>{i + 1}.</span> {item.text}</li>
         ))}
       </ul>
     );
