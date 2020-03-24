@@ -49,7 +49,7 @@ class TodoApp extends React.Component {
     };
     this.setState(state => ({
       items: state.items.concat(newItem),
-      text: 'Something else'
+      text: ['Something else', 'Go to bed', 'Have a drink'][Math.floor(Math.random() * 3)],
     }));
   }
 }
@@ -58,8 +58,8 @@ class TodoList extends React.Component {
   render() {
     return (
       <ul>
-        {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
+        {this.props.items.map((item, i) => (
+          <li key={item.id}><span>{i+1}.</span> {item.text}</li>
         ))}
       </ul>
     );
