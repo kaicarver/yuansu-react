@@ -30,6 +30,12 @@ class TodoApp extends React.Component {
           </button>
         </form>
         <TodoList items={this.state.items} />
+        Source: <a
+          className="App-link"
+          href="https://github.com/kaicarver/yuansu-react"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Github</a>
       </div>
     );
   }
