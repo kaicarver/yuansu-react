@@ -10,6 +10,7 @@ function App() {
         <p>
           Welcome to yet another of Kai's web projects.
         </p>
+        <HelloMessage name="Kai" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -24,6 +25,16 @@ function App() {
       </header>
     </div>
   );
+}
+
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+      </div>
+    );
+  }
 }
 
 export default App;
