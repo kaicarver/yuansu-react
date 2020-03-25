@@ -69,7 +69,7 @@ class TodoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <TodoItem item={item} count={i + 1}/>
+          <TodoItem items={this.props.items} count={i}/>
         ))}
       </ul>
     );
@@ -82,8 +82,8 @@ function handleClick(item) {
 
 class TodoItem extends React.Component {
   render() {
-    let item = this.props.item;
     let count = this.props.count;
+    let item = this.props.items[count];
     return (
       <li onClick={() => handleClick(item)} key={item.id}><span>{count}.</span> {item.text}</li>
     );
