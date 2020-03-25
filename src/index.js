@@ -14,6 +14,7 @@ class TodoApp extends React.Component {
   componentDidMount(){
     document.title = "Kai's React App"
   }
+
   render() {
     return (
       <div>
@@ -68,7 +69,7 @@ class TodoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <li key={item.id}><span>{i + 1}.</span> {item.text}</li>
+          <li onClick={() => alert('hi ' + item.id)} key={item.id}><span>{i + 1}.</span> {item.text}</li>
         ))}
       </ul>
     );
