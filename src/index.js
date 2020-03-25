@@ -69,12 +69,23 @@ class TodoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <li onClick={() => alert('hi ' + item.id)} key={item.id}><span>{i + 1}.</span> {item.text}</li>
+          <TodoItem item={item} count={i + 1}/>
         ))}
       </ul>
     );
   }
 }
+
+class TodoItem extends React.Component {
+  render() {
+    let item = this.props.item;
+    let count = this.props.count;
+    return (
+      <li onClick={() => alert('hi ' + item.id)} key={item.id}><span>{count}.</span> {item.text}</li>
+    );
+  }
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
