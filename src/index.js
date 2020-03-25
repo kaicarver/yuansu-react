@@ -11,7 +11,7 @@ class TodoApp extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     document.title = "Kai's React App"
   }
 
@@ -69,7 +69,7 @@ class TodoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <TodoItem items={this.props.items} count={i}/>
+          <TodoItem items={this.props.items} count={i} />
         ))}
       </ul>
     );
