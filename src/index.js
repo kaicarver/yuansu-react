@@ -76,12 +76,16 @@ class TodoList extends React.Component {
   }
 }
 
+function handleClick(item) {
+  alert('heyy ' + item.id)
+}
+
 class TodoItem extends React.Component {
   render() {
     let item = this.props.item;
     let count = this.props.count;
     return (
-      <li onClick={() => alert('hi ' + item.id)} key={item.id}><span>{count}.</span> {item.text}</li>
+      <li onClick={() => handleClick(item)} key={item.id}><span>{count}.</span> {item.text}</li>
     );
   }
 }
