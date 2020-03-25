@@ -30,3 +30,7 @@ and failing, I ended up doing this which finally got me ok:
 1442  npm uninstall -g create-react-app
 1443  npx create-react-app yuansu-react      
 ```
+
+## How to pass data up and down component levels
+
+I find I'm unsure how to pass data. For a TODO list, do I pass each item separately, maybe with its count? Or do I pass the items array, which would allow an item to delete or move itself? But the item shouldn't know about that data structure... Probably I should just pass a function?
