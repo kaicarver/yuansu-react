@@ -4,26 +4,18 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 function PeriodicTable(props) {
-  let elts = <div>
-    <Element name="H" />
-    <Element name="He" />
-    <Element name="Li" />
-    <Element name="Be" />
-    <Element name="B" />
-    <Element name="C" />
-    <Element name="N" />
-    <Element name="O" />
-    <Element name="Fooo" />
-    <Element name="Ne" />
-  </div>;
-
+  const elements = "H He Li Be B C N O F He".split(' ');
+  const listElements = elements.map((el) =>
+    <li><Element name={el} /></li>
+  );
   return <div>
-  <h1>
-    Periodic Table (placeholder)
-  </h1>
-    {elts}
+    <h1>Periodic Table (placeholder)</h1>
+    <ul>
+      {listElements}
+    </ul>
   </div>;
 }
+
 function Element(props) {
   return <div>
     Element {props.name}
