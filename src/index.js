@@ -83,14 +83,11 @@ class TodoApp extends React.Component {
 }
 
 class TodoList extends React.Component {
-  handleClick(item) {
-    alert('heyy ' + item.id)
-  }
   render() {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <TodoItem onClick={(i) => this.handleClick(i)} />
+          <TodoItem count={i} items={this.props.items} />
         ))}
       </ul>
     );
@@ -98,11 +95,14 @@ class TodoList extends React.Component {
 }
 
 class TodoItem extends React.Component {
+  handleClick(items, count) {
+    alert('heyy item ' + (count + 1) + " " + items[count].id)
+  }
   render() {
     let count = this.props.count;
     let item = this.props.items[count];
     return (
-      <li onClick={() => this.onClick(item)} key={item.id}><span>{count}.</span> {item.text}</li>
+      <li onClick={() => this.handleClick(this.props.items, count)} key={item.id}><span>{count + 1}.</span> {item.text}</li>
     );
   }
 }
