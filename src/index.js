@@ -96,7 +96,7 @@ class TodoList extends React.Component {
 
 class TodoItem extends React.Component {
   handleClick(items, count) {
-    alert('heyy item ' + (count + 1) + " " + items[count].id)
+    alert(`heyy item ${count + 1} ${items[count].id}`)
   }
   render() {
     let count = this.props.count;
