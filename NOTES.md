@@ -34,3 +34,8 @@ and failing, I ended up doing this which finally got me ok:
 ## How to pass data up and down component levels
 
 I find I'm unsure how to pass data. For a TODO list, do I pass each item separately, maybe with its count? Or do I pass the items array, which would allow an item to delete or move itself? But the item shouldn't know about that data structure... Probably I should just pass a function?
+
+## The rabbit hole
+
+I'm finding it too easy to fall into a rabbit hole of searching for technical info on every detail of React. It seems like a moving target. I'll try to avoid it by keeping things super simple and not investigating every last bit.
+
