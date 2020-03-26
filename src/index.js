@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+function PeriodicTable(props) {
+  return <h1>
+    Periodic Table (placeholder)
+  </h1>;
+}
+
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
@@ -65,19 +71,18 @@ class TodoApp extends React.Component {
 }
 
 class TodoList extends React.Component {
+  handleClick(item) {
+    alert('heyy ' + item.id)
+  }
   render() {
     return (
       <ul>
         {this.props.items.map((item, i) => (
-          <TodoItem items={this.props.items} count={i} />
+          <TodoItem onClick={(i) => this.handleClick(i)} />
         ))}
       </ul>
     );
   }
-}
-
-function handleClick(item) {
-  alert('heyy ' + item.id)
 }
 
 class TodoItem extends React.Component {
@@ -85,7 +90,7 @@ class TodoItem extends React.Component {
     let count = this.props.count;
     let item = this.props.items[count];
     return (
-      <li onClick={() => handleClick(item)} key={item.id}><span>{count}.</span> {item.text}</li>
+      <li onClick={() => this.onClick(item)} key={item.id}><span>{count}.</span> {item.text}</li>
     );
   }
 }
@@ -93,6 +98,7 @@ class TodoItem extends React.Component {
 
 ReactDOM.render(
   <React.StrictMode>
+    <PeriodicTable />
     <TodoApp />
   </React.StrictMode>,
   document.getElementById('root')
