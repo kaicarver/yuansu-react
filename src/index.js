@@ -4,10 +4,21 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 function PeriodicTable(props) {
-  return <h1>
+  return <div>
+    <h1>
     Periodic Table (placeholder)
-  </h1>;
+    </h1>
+    <Element/>
+    <Element/>
+    <Element/>
+  </div>;
 }
+function Element(props) {
+  return <div>
+    An element
+  </div>;
+}
+
 
 class TodoApp extends React.Component {
   constructor(props) {
