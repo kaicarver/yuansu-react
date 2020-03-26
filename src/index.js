@@ -4,10 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 function PeriodicTable(props) {
-  return <div>
-    <h1>
-      Periodic Table (placeholder)
-    </h1>
+  let elts = <div>
     <Element name="H" />
     <Element name="He" />
     <Element name="Li" />
@@ -16,8 +13,15 @@ function PeriodicTable(props) {
     <Element name="C" />
     <Element name="N" />
     <Element name="O" />
-    <Element name="F" />
+    <Element name="Fooo" />
     <Element name="Ne" />
+  </div>;
+
+  return <div>
+  <h1>
+    Periodic Table (placeholder)
+  </h1>
+    {elts}
   </div>;
 }
 function Element(props) {
