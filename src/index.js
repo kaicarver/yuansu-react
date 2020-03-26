@@ -6,16 +6,23 @@ import * as serviceWorker from './serviceWorker';
 function PeriodicTable(props) {
   return <div>
     <h1>
-    Periodic Table (placeholder)
+      Periodic Table (placeholder)
     </h1>
-    <Element/>
-    <Element/>
-    <Element/>
+    <Element name="H" />
+    <Element name="He" />
+    <Element name="Li" />
+    <Element name="Be" />
+    <Element name="B" />
+    <Element name="C" />
+    <Element name="N" />
+    <Element name="O" />
+    <Element name="F" />
+    <Element name="Ne" />
   </div>;
 }
 function Element(props) {
   return <div>
-    An element
+    Element {props.name}
   </div>;
 }
 
