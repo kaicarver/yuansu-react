@@ -10,8 +10,8 @@ function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <div>
-      {periodicData.elements.map((el) =>
-        <span key={el.symbol}><Element name={el.symbol} /> </span>
+      {periodicData.elements.map((el) => 
+        <span key={el.symbol}><Element el={el} /> </span>
       )}
     </div>
   </div>;
@@ -19,7 +19,7 @@ function PeriodicTable(props) {
 
 function Element(props) {
   return <span>
-    {props.name}
+    {props.el.symbol} {props.el.name}
   </span>;
 }
 
