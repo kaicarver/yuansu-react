@@ -4,24 +4,23 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import periodicData from './PeriodicTable.json';
 
-console.log(periodicData.elements.map((el) => el.symbol));
 console.log(periodicData);
 
 function PeriodicTable(props) {
   return <div>
-    <h1>Periodic Table (placeholder)</h1>
-    <ul>
-      {periodicData.elements.map((el) => el.symbol).map((el) =>
-        <li key={el}><Element name={el} /></li>
+    <h1>Periodic Table</h1>
+    <div>
+      {periodicData.elements.map((el) =>
+        <span key={el.symbol}><Element name={el.symbol} /> </span>
       )}
-    </ul>
+    </div>
   </div>;
 }
 
 function Element(props) {
-  return <div>
-    Element {props.name}
-  </div>;
+  return <span>
+    {props.name}
+  </span>;
 }
 
 
