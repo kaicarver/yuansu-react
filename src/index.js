@@ -78,7 +78,7 @@ class TodoApp extends React.Component {
       text: this.state.text,
       id: Date.now()
     };
-    const todos = ['Something else', 'Go to bed', 'Have a drink', 'Github commit'];
+    const todos = ['Something else', 'Go to bed', 'Have a drink', 'Github commit', 'Go shopping', 'Go jogging', 'Go crazy'];
     this.setState(state => ({
       items: state.items.concat(newItem),
       text: todos[Math.floor(Math.random() * todos.length)],
