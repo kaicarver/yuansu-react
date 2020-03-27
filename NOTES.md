@@ -39,3 +39,8 @@ I find I'm unsure how to pass data. For a TODO list, do I pass each item separat
 
 I'm finding it too easy to fall into a rabbit hole of searching for technical info on every detail of React. It seems like a moving target. I'll try to avoid it by keeping things super simple and not investigating every last bit.
 
+## Periodic table data
+
+From here:
+
+https://github.com/Bowserinator/Periodic-Table-JSON
