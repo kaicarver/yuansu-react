@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import chineseData from './ElementsChinese.json';
 import periodicData from './PeriodicTable.json';
 
-console.log(periodicData);
+console.log(chineseData.elements);
+console.log(periodicData.elements);
 
 function PeriodicTable(props) {
   return <div>
