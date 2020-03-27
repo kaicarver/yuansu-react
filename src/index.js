@@ -4,13 +4,14 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import periodicData from './PeriodicTable.json';
 
+console.log(periodicData.elements.map((el) => el.symbol));
 console.log(periodicData);
 
 function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table (placeholder)</h1>
     <ul>
-      {"H He Li Be B C N O F Ne".split(" ").map((el) =>
+      {periodicData.elements.map((el) => el.symbol).map((el) =>
         <li key={el}><Element name={el} /></li>
       )}
     </ul>
