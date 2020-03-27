@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+// is there a way to import array directly without the extra "element" indirection?
 import chineseData from './ElementsChinese.json';
 import periodicData from './PeriodicTable.json';
 
+// missing element 119 in Chinese?
 console.log(chineseData.elements);
+console.log(periodicData.elements);
+
+periodicData.elements.forEach((el, i) => {
+  periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i]}
+});
 console.log(periodicData.elements);
 
 function PeriodicTable(props) {
@@ -21,7 +28,7 @@ function PeriodicTable(props) {
 
 function Element(props) {
   return <span>
-    {props.el.symbol} {props.el.name}
+    {props.el.trad} {props.el.symbol} {props.el.name}
   </span>;
 }
 
