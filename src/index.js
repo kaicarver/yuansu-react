@@ -20,7 +20,7 @@ function PeriodicTable(props) {
     <h1>Periodic Table</h1>
     <div>
       {periodicData.elements.map((el) => 
-        <span key={el.symbol}><Element el={el} /> </span>
+        <span key={el.symbol}><Element el={el} /> {el.period}</span>
       )}
     </div>
   </div>;
