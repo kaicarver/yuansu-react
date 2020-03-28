@@ -11,7 +11,7 @@ console.log(chineseData.elements);
 console.log(periodicData.elements);
 
 periodicData.elements.forEach((el, i) => {
-  periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i]}
+  periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i] }
 });
 console.log(periodicData.elements);
 
@@ -42,7 +42,7 @@ class TodoApp extends React.Component {
   }
 
   componentDidMount() {
-    document.title = "Kai's React App"
+    document.title = "Kai's Periodic Table App in React"
   }
 
   render() {
