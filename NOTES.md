@@ -64,4 +64,3 @@ https://www.npmjs.com/package/periodic-table
 This article might be more strightforward using just divs and React
 
 https://levelup.gitconnected.com/how-i-made-the-periodic-table-with-css-grid-and-react-69f94d7fcec
-
