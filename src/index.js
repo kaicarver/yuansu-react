@@ -7,20 +7,18 @@ import chineseData from './ElementsChinese.json';
 import periodicData from './PeriodicTable.json';
 
 // missing element 119 in Chinese?
-console.log(chineseData.elements);
-console.log(periodicData.elements);
-
 periodicData.elements.forEach((el, i) => {
   periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i] }
 });
 console.log(periodicData.elements);
-
+let rows = [[],[],[],[],[],[],[],[],[]];
+periodicData.elements.forEach(el => rows[el.period].push(el));
 function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <div>
-      {periodicData.elements.map((el) => 
-        <span key={el.symbol}><Element el={el} /> {el.period}</span>
+      {rows.map(row => 
+        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>)
       )}
     </div>
   </div>;
