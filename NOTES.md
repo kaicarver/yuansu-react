@@ -44,3 +44,24 @@ I'm finding it too easy to fall into a rabbit hole of searching for technical in
 From here:
 
 https://github.com/Bowserinator/Periodic-Table-JSON
+
+## What CSS to use for the Periodic Table?
+
+This looks like a good approach, with CSS Grid
+
+https://responsivedesign.is/articles/creating-the-periodic-table-with-grid-css/
+
+and Description Lists
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
+
+He also mention the `periodic-table` npm package,
+which may or may not be redundant with the periodic data 
+mentioned above.
+
+https://www.npmjs.com/package/periodic-table
+
+This article might be more strightforward using just divs and React
+
+https://levelup.gitconnected.com/how-i-made-the-periodic-table-with-css-grid-and-react-69f94d7fcec
+
