@@ -13,12 +13,13 @@ periodicData.elements.forEach((el, i) => {
 console.log(periodicData.elements);
 let rows = [[],[],[],[],[],[],[],[],[]];
 periodicData.elements.forEach(el => rows[el.period].push(el));
+rows.shift();
 function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <div>
-      {rows.map(row => 
-        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>)
+      {rows.map((row, period) => 
+        [<div key={period+1}>{period+1}</div>].concat(row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>))
       )}
     </div>
   </div>;
