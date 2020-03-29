@@ -12,7 +12,13 @@ periodicData.elements.forEach((el, i) => {
 });
 console.log(periodicData.elements);
 let rows = [[],[],[],[],[],[],[],[],[]];
+//console.log("rows1: ", rows);
+// isnt this the same?
+//rows = Array(9).fill([]]);
+//console.log("rows2: ", rows);
 periodicData.elements.forEach(el => rows[el.period].push(el));
+//console.log("rows3: ", rows);
+
 rows.shift();
 function PeriodicTable(props) {
   return <div>
@@ -26,8 +32,8 @@ function PeriodicTable(props) {
 }
 
 function Element(props) {
-  return <span>
-    {props.el.trad} {props.el.symbol} {props.el.name}
+  return <span title={props.el.name}>
+    {props.el.trad} {props.el.symbol}
   </span>;
 }
 
