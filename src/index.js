@@ -32,7 +32,10 @@ function PeriodicTable(props) {
 }
 
 function Element(props) {
-  return <span title={props.el.name}>
+  function handleClick(e) {
+    alert(props.el.name)
+  }
+  return <span title={props.el.name} onClick={handleClick}>
     {props.el.trad} {props.el.simp} {props.el.symbol} {props.el.number}
   </span>;
 }
