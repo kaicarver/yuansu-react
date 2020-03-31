@@ -24,19 +24,22 @@ function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <div>
+      <div id="help">(click or mouseover element for details)</div>
       {rows.map((row, period) => 
-        [<div key={period+1}>{period+1}</div>].concat(row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>))
+        [<span key={period+1}>{period+1}: </span>].concat(row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>))
       )}
     </div>
+    <div id="detail">...</div>
   </div>;
 }
 
 function Element(props) {
   function handleClick(e) {
-    alert(props.el.name)
+    document.getElementById('detail').innerHTML = 
+      Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('<br>');
   }
-  return <span title={props.el.name} onClick={handleClick}>
-    {props.el.trad} {props.el.simp} {props.el.symbol} {props.el.number}
+  return <span title={props.el.name} onClick={handleClick} onMouseOver={handleClick}>
+    {props.el.trad} {props.el.symbol} {props.el.number}
   </span>;
 }
 
