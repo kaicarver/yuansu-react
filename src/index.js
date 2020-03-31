@@ -33,7 +33,7 @@ function PeriodicTable(props) {
 
 function Element(props) {
   return <span title={props.el.name}>
-    {props.el.trad} {props.el.symbol} {props.el.number}
+    {props.el.trad} {props.el.simp} {props.el.symbol} {props.el.number}
   </span>;
 }
 
