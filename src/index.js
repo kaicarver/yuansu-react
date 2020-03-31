@@ -11,12 +11,12 @@ periodicData.elements.forEach((el, i) => {
   periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i] }
 });
 console.log(periodicData.elements);
-let rows = [[],[],[],[],[],[],[],[],[]];
+let rows = [[],[],[],[],[],[],[],[],[],[],[]];
 //console.log("rows1: ", rows);
 // isnt this the same?
-//rows = Array(9).fill([]]);
+//rows = Array(11).fill([]]);
 //console.log("rows2: ", rows);
-periodicData.elements.forEach(el => rows[el.period].push(el));
+periodicData.elements.forEach(el => rows[el.ypos].push(el));
 //console.log("rows3: ", rows);
 
 rows.shift();
@@ -26,7 +26,7 @@ function PeriodicTable(props) {
     <div>
       <div id="help">(click or mouseover element for details)</div>
       {rows.map((row, period) => 
-        [<span key={period+1}>{period+1}: </span>].concat(row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>))
+        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>)
       )}
     </div>
     <div id="detail">...</div>
@@ -35,11 +35,17 @@ function PeriodicTable(props) {
 
 function Element(props) {
   function handleClick(e) {
-    document.getElementById('detail').innerHTML = 
-      Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('<br>');
+    console.log(Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('\n'));
+    document.getElementById('detail').innerHTML = `
+${props.el.trad} ${props.el.simp} ${props.el.symbol} ${props.el.period} ${props.el.number} ${props.el.atomic_mass}<br>
+${props.el.name}<br>
+${props.el.source}<br>
+discovered: ${props.el.discovered_by}<br>
+${props.el.summary}
+`.trim();
   }
   return <span title={props.el.name} onClick={handleClick} onMouseOver={handleClick}>
-    {props.el.trad} {props.el.symbol} {props.el.number}
+    {props.el.trad}
   </span>;
 }
 
