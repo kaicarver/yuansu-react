@@ -6,7 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import chineseData from './ElementsChinese.json';
 import periodicData from './PeriodicTable.json';
 
-// missing element 119 in Chinese?
+// missing element 119 in Chinese
+// anyway Ununennium is a little bogus
+periodicData.elements.pop();
 periodicData.elements.forEach((el, i) => {
   periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i] }
 });
