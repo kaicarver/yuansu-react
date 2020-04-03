@@ -32,6 +32,13 @@ function PeriodicTable(props) {
       )}
     </div>
     <div id="detail">...</div>
+    <div>
+      Source: <a
+        className="App-link"
+        href="https://github.com/kaicarver/yuansu-react"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Github</a></div>
   </div>;
 }
 
