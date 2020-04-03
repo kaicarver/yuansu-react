@@ -26,12 +26,13 @@ function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <div>
-      <div id="help">(click or mouseover element for details)</div>
-      {rows.map((row, period) => 
-        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br/>)
+      {rows.map((row, period) =>
+        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br />)
       )}
     </div>
-    <div id="detail">...</div>
+    <div id="detail">
+      <div id="help">(click or mouseover element for details)</div>
+    </div>
     <div>
       Source: <a
         className="App-link"
