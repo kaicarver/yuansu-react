@@ -25,21 +25,26 @@ rows.shift();
 function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
-    <div>
+    <table>
+      <tr>
+    <td>
       {rows.map((row, period) =>
         row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br />)
       )}
-    </div>
-    <div id="detail">
+    </td>
+    <td id="detail">
       <div id="help">(click element for details)</div>
-    </div>
-    <div>
+    </td>
+    </tr>
+    </table>
+    <p>
       Source: <a
         className="App-link"
         href="https://github.com/kaicarver/yuansu-react"
         target="_blank"
         rel="noopener noreferrer"
-      >Github</a></div>
+      >Github</a>
+    </p>
   </div>;
 }
 

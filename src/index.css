@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+table tr td {
+  width: 50%;
+  vertical-align: top;
+}
+
 #help {
   color: gray;
   font-size: 90%;
