@@ -31,7 +31,7 @@ function PeriodicTable(props) {
       )}
     </div>
     <div id="detail">
-      <div id="help">(click or mouseover element for details)</div>
+      <div id="help">(click element for details)</div>
     </div>
     <div>
       Source: <a
@@ -54,7 +54,7 @@ discovered: ${props.el.discovered_by}<br>
 ${props.el.summary}
 `.trim();
   }
-  return <span title={props.el.name} onClick={handleClick} onMouseOver={handleClick}>
+  return <span title={props.el.name} onClick={handleClick}>
     {props.el.trad}
   </span>;
 }
