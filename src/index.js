@@ -68,7 +68,7 @@ discovered: ${props.el.discovered_by}<br>
 ${props.el.summary}
 `.trim();
   }
-  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.symbol} </span>
+  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.symbol}{props.el.number} </span>
 }
 
 ReactDOM.render(
