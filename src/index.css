@@ -22,6 +22,10 @@ table tr td {
   grid-template-columns: repeat(17, auto) 1fr;
 }
 
+#main span:nth-child(2) {
+  grid-column-start: -2;
+}
+
 #help {
   color: gray;
   font-size: 90%;
