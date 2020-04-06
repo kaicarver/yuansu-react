@@ -51,15 +51,20 @@ function Table(props) {
 function Element(props) {
   function handleClick(e) {
     console.log(Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('\n'));
-    document.getElementById('detail').innerHTML = `
-${props.el.trad} ${props.el.simp} ${props.el.symbol} ${props.el.period} ${props.el.number} ${props.el.atomic_mass}<br>
-${props.el.name}<br>
-${props.el.source}<br>
-discovered: ${props.el.discovered_by}<br>
-${props.el.summary}
-`.trim();
+    document.getElementById('detail').innerHTML = Detail(props);
   }
   return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.trad} </span>
+}
+
+function Detail(props) {
+  // can I just use JSX here?
+  return `
+  ${props.el.trad} ${props.el.simp} ${props.el.symbol} ${props.el.period} ${props.el.number} ${props.el.atomic_mass}<br>
+  ${props.el.name}<br>
+  ${props.el.source}<br>
+  discovered: ${props.el.discovered_by}<br>
+  ${props.el.summary}
+  `.trim();
 }
 
 ReactDOM.render(
