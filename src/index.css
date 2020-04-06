@@ -17,24 +17,40 @@ table tr td {
   vertical-align: top;
 }
 
+/* repeat can be set for 18 or 32-column (resp. 17, 31) presentation */
 #table {
   display: grid;
-  grid-template-columns: repeat(31, auto) 1fr;
+  grid-template-columns: repeat(17, auto) 1fr;
 }
-
-/* He (element 2) on the right, column 18 */
+/* He (element 2) on the right, column 18 (or 32) */
 #table .element:nth-child(2) {
   grid-column-start: -2;
 }
-/* B and Al (elements 5 and 13) at column 13 */
+/* B and Al (elements 5 and 13) at column 13 (or 27) */
 #table .element:nth-child(5),
 #table .element:nth-child(13)  {
   grid-column-start: -7;
 }
-/* Ti and Zr at column 13 */
+/* Ti and Zr at column 4 (or 18) */
 #table .element:nth-child(22),
 #table .element:nth-child(40)  {
   grid-column-start: -16;
+}
+
+/* Lanthanides and Actinides */
+.element:nth-child(57) {
+  color:red;
+}
+.element:nth-child(n+58):nth-child(-n+71)  {
+  grid-row-start: 10;
+  color:red;
+}
+.element:nth-child(89) {
+  color:orange;
+}
+.element:nth-child(n+90):nth-child(-n+103)  {
+  grid-row-start: 11;
+  color:orange;
 }
 
 #help {
