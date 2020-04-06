@@ -22,16 +22,17 @@ periodicData.elements.forEach(el => rows[el.ypos].push(el));
 //console.log("rows3: ", rows);
 
 rows.shift();
-function PeriodicTable(props) {
+
+function YuansuApp(props) {
   return <div>
     <h1>Periodic Table</h1>
     <table>
       <tbody>
         <tr>
           <td>
-            {rows.map((row, period) =>
-              row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br />)
-            )}
+            <div id="main">
+              <Table rows={rows}/>
+            </div>
           </td>
           <td id="detail">
             <div id="help">(click element for details)</div>
@@ -50,6 +51,12 @@ function PeriodicTable(props) {
   </div>;
 }
 
+function Table(props) {
+  return props.rows.map((row, period) =>
+    row.map(el => <Element key={el.symbol} el={el} />).concat(<br />)
+  )
+}
+
 function Element(props) {
   function handleClick(e) {
     console.log(Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('\n'));
@@ -61,14 +68,12 @@ discovered: ${props.el.discovered_by}<br>
 ${props.el.summary}
 `.trim();
   }
-  return <span title={props.el.name} onClick={handleClick}>
-    {props.el.trad}
-  </span>;
+  return <span title={props.el.name} onClick={handleClick}>{props.el.trad} </span>
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <PeriodicTable />
+    <YuansuApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
