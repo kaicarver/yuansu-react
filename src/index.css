@@ -17,13 +17,24 @@ table tr td {
   vertical-align: top;
 }
 
-#main {
+#table {
   display: grid;
-  grid-template-columns: repeat(17, auto) 1fr;
+  grid-template-columns: repeat(31, auto) 1fr;
 }
 
-#main span:nth-child(2) {
+/* He (element 2) on the right, column 18 */
+#table .element:nth-child(2) {
   grid-column-start: -2;
+}
+/* B and Al (elements 5 and 13) at column 13 */
+#table .element:nth-child(5),
+#table .element:nth-child(13)  {
+  grid-column-start: -7;
+}
+/* Ti and Zr at column 13 */
+#table .element:nth-child(22),
+#table .element:nth-child(40)  {
+  grid-column-start: -16;
 }
 
 #help {

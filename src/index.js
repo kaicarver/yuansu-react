@@ -30,7 +30,7 @@ function YuansuApp(props) {
       <tbody>
         <tr>
           <td>
-            <div id="main">
+            <div id="table">
               <Table rows={rows}/>
             </div>
           </td>
@@ -68,7 +68,7 @@ discovered: ${props.el.discovered_by}<br>
 ${props.el.summary}
 `.trim();
   }
-  return <span title={props.el.name} onClick={handleClick}>{props.el.trad} </span>
+  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.symbol} </span>
 }
 
 ReactDOM.render(
