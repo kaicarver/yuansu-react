@@ -53,7 +53,7 @@ function YuansuApp(props) {
 
 function Table(props) {
   return props.rows.map((row, period) =>
-    row.map(el => <Element key={el.symbol} el={el} />).concat(<br />)
+    row.map(el => <Element key={el.symbol} el={el} />)
   )
 }
 
