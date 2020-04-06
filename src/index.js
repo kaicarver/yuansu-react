@@ -13,15 +13,6 @@ periodicData.elements.forEach((el, i) => {
   periodicData.elements[i] = { ...periodicData.elements[i], ...chineseData.elements[i] }
 });
 console.log(periodicData.elements);
-let rows = [[],[],[],[],[],[],[],[],[],[],[]];
-//console.log("rows1: ", rows);
-// isnt this the same?
-//rows = Array(11).fill([]]);
-//console.log("rows2: ", rows);
-periodicData.elements.forEach(el => rows[el.ypos].push(el));
-//console.log("rows3: ", rows);
-
-rows.shift();
 
 function YuansuApp(props) {
   return <div>
@@ -31,7 +22,7 @@ function YuansuApp(props) {
         <tr>
           <td>
             <div id="table">
-              <Table rows={rows}/>
+              <Table data={periodicData.elements}/>
             </div>
           </td>
           <td id="detail">
@@ -52,8 +43,8 @@ function YuansuApp(props) {
 }
 
 function Table(props) {
-  return props.rows.map((row, period) =>
-    row.map(el => <Element key={el.symbol} el={el} />)
+  return props.data.map((el, number) =>
+    <Element key={el.symbol} el={el} />
   )
 }
 
@@ -68,7 +59,7 @@ discovered: ${props.el.discovered_by}<br>
 ${props.el.summary}
 `.trim();
   }
-  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.symbol}{props.el.number} </span>
+  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.symbol} </span>
 }
 
 ReactDOM.render(

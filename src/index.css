@@ -19,7 +19,7 @@ table tr td {
 
 #table {
   display: grid;
-  grid-template-columns: repeat(17, auto) 1fr;
+  grid-template-columns: repeat(31, auto) 1fr;
 }
 
 /* He (element 2) on the right, column 18 */
