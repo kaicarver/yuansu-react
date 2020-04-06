@@ -17,6 +17,11 @@ table tr td {
   vertical-align: top;
 }
 
+#main {
+  display: grid;
+  grid-template-columns: repeat(17, auto) 1fr;
+}
+
 #help {
   color: gray;
   font-size: 90%;
