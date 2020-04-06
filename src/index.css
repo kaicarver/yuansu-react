@@ -17,10 +17,13 @@ table tr td {
   vertical-align: top;
 }
 
-/* repeat can be set for 18 or 32-column (resp. 17, 31) presentation */
+/* repeat can be set for 18 or 32-column presentation */
 #table {
   display: grid;
   grid-template-columns: repeat(17, auto) 1fr;
+}
+.element {
+  width: 1.5em;
 }
 /* He (element 2) on the right, column 18 (or 32) */
 .element:nth-child(2) {
@@ -45,15 +48,15 @@ table tr td {
 .element:nth-child(57) {
   color:red;
 }
-.element:nth-child(n+57):nth-child(-n+71)  {
-  grid-row-start: 10;
+.element:nth-child(n+58):nth-child(-n+71)  {
+  grid-row-start: 8;
   color:red;
 }
 .element:nth-child(89) {
   color:orange;
 }
-.element:nth-child(n+89):nth-child(-n+103)  {
-  grid-row-start: 11;
+.element:nth-child(n+90):nth-child(-n+103)  {
+  grid-row-start: 9;
   color:orange;
 }
 
