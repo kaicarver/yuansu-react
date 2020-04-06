@@ -26,16 +26,18 @@ function PeriodicTable(props) {
   return <div>
     <h1>Periodic Table</h1>
     <table>
-      <tr>
-    <td>
-      {rows.map((row, period) =>
-        row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br />)
-      )}
-    </td>
-    <td id="detail">
-      <div id="help">(click element for details)</div>
-    </td>
-    </tr>
+      <tbody>
+        <tr>
+          <td>
+            {rows.map((row, period) =>
+              row.map(el => <span key={el.symbol}><Element el={el} /> </span>).concat(<br />)
+            )}
+          </td>
+          <td id="detail">
+            <div id="help">(click element for details)</div>
+          </td>
+        </tr>
+      </tbody>
     </table>
     <p>
       Source: <a
