@@ -16,14 +16,14 @@ periodicData.elements.forEach((el, i) => {
 console.log(periodicData.elements);
 
 function YuansuApp(props) {
-  return <div>
+  return <div id="page">
     <h1>Periodic Table</h1>
     <table>
       <tbody>
         <tr>
           <td>
             <div id="table">
-              <Table data={periodicData.elements}/>
+              <Table data={periodicData.elements} />
             </div>
           </td>
           <td id="detail">
