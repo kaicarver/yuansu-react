@@ -15,7 +15,7 @@ code {
 #page {
   display: grid;
   align-items: left;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 table tr td {

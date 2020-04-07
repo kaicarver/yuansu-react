@@ -17,27 +17,20 @@ console.log(periodicData.elements);
 
 function YuansuApp(props) {
   return <div id="page">
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <h1>Periodic Table</h1>
-            <Table data={periodicData.elements} />
-          </td>
-          <td id="detail">
-            <div id="help">(click element for details)</div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
+    <div>
+      <Table data={periodicData.elements} />
+    </div>
+    <div id="detail">
+      <div id="help">(click element for details)</div>
+    </div>
+    <div>
       Source: <a
         className="App-link"
         href="https://github.com/kaicarver/yuansu-react"
         target="_blank"
         rel="noopener noreferrer"
       >Github</a>
-    </p>
+    </div>
   </div>;
 }
 
