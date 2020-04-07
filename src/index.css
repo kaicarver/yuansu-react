@@ -9,7 +9,7 @@ body {
 #page {
   display: grid;
   align-items: left;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 0.5fr;
 }
 /* repeat can be set for 18 or 32-column presentation */
 #table {
@@ -54,12 +54,18 @@ body {
   color:orange;
 }
 
-#help {
-  color: gray;
-  font-size: 90%;
-}
-
 #detail {
   color: blue;
+  font-size: 90%;
+}
+.chinese {
+  font-size: 300%;
+}
+.english {
+  font-size: 200%;
+}
+
+#help {
+  color: gray;
   font-size: 90%;
 }

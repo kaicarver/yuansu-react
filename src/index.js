@@ -21,7 +21,7 @@ function YuansuApp(props) {
       <Table data={periodicData.elements} />
     </div>
     <div id="detail">
-      <div id="help">(click element for details)</div>
+      <div id="help"><Detail/></div>
     </div>
     <div>
       Source: <a
@@ -53,11 +53,18 @@ function Element(props) {
 }
 
 function Detail(props) {
+  const zhspace = "　";
+  let el = props.el ? props.el : {trad:"元素週期表", simp:"", symbol:"Periodic Table"};
   return <div>
-    {props.el.trad} {props.el.simp} {props.el.symbol} {props.el.period} {props.el.number} {props.el.atomic_mass}<br/>
-    <a href={props.el.source} target="_blank" rel="noopener noreferrer">{props.el.name}</a><br/>
-    discovered: {props.el.discovered_by}<br/>
-    {props.el.summary}
+    <div class="chinese">
+      <span>{el.trad} </span>
+      <span>{el.simp !== el.trad ? el.simp : zhspace} </span>
+    </div>
+    <div class="english">{el.symbol}</div>
+    <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br/>
+    {el.period} {el.number} {el.atomic_mass}<br/>
+    discovered: {el.discovered_by}<br/>
+    {el.summary}
   </div>
 }
 
