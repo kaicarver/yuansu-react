@@ -17,14 +17,12 @@ console.log(periodicData.elements);
 
 function YuansuApp(props) {
   return <div id="page">
-    <h1>Periodic Table</h1>
     <table>
       <tbody>
         <tr>
           <td>
-            <div id="table">
-              <Table data={periodicData.elements} />
-            </div>
+            <h1>Periodic Table</h1>
+            <Table data={periodicData.elements} />
           </td>
           <td id="detail">
             <div id="help">(click element for details)</div>
@@ -44,9 +42,11 @@ function YuansuApp(props) {
 }
 
 function Table(props) {
-  return props.data.map((el, number) =>
-    <Element key={el.symbol} el={el} />
-  )
+  return <div id="table">
+    {props.data.map((el, number) =>
+      <Element key={el.symbol} el={el} />
+    )}
+  </div>
 }
 
 function Element(props) {
