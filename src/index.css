@@ -6,23 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 #page {
   display: grid;
   align-items: left;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
-table tr td {
-  width: 50%;
-  vertical-align: top;
-}
-
 /* repeat can be set for 18 or 32-column presentation */
 #table {
   display: grid;

@@ -55,8 +55,7 @@ function Element(props) {
 function Detail(props) {
   return <div>
     {props.el.trad} {props.el.simp} {props.el.symbol} {props.el.period} {props.el.number} {props.el.atomic_mass}<br/>
-    {props.el.name}<br/>
-    {props.el.source}<br/>
+    <a href={props.el.source} target="_blank">{props.el.name}</a><br/>
     discovered: {props.el.discovered_by}<br/>
     {props.el.summary}
   </div>
