@@ -54,7 +54,7 @@ function Element(props) {
 
 function Detail(props) {
   const zhspace = "　";
-  let el = props.el ? props.el : {trad:"元素週期表", simp:"", symbol:"Periodic Table"};
+  let el = props.el ? props.el : {trad:"元素週期表", simp:"", symbol:"Periodic Table", discovered_by:"Dmitri Mendeleev"};
   return <div>
     <div class="chinese">
       <span>{el.trad} </span>
@@ -63,7 +63,7 @@ function Detail(props) {
     <div class="english">{el.symbol}</div>
     <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br/>
     {el.period} {el.number} {el.atomic_mass}<br/>
-    discovered: {el.discovered_by}<br/>
+    discovery: {el.discovered_by}<br/>
     {el.summary}
   </div>
 }
