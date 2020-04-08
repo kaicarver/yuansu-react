@@ -7,6 +7,12 @@ import * as serviceWorker from './serviceWorker';
 import chineseData from './ElementsChinese.json';
 import periodicData from './PeriodicTable.json';
 
+//let hanzi = require("hanzi");
+import hanzi from 'hanzi';
+// the loading of the hanzi data should be done asynchronously...
+// and maybe in a different file?...
+hanzi.start();
+
 // missing element 119 in Chinese
 // anyway Ununennium is a little bogus
 periodicData.elements.pop();
@@ -55,12 +61,14 @@ function Element(props) {
 function Detail(props) {
   const zhspace = "　";
   let el = props.el ? props.el : {trad:"元素週期表", simp:"", symbol:"Periodic Table", discovered_by:"Dmitri Mendeleev"};
+  // the hanzi call needs error handling, fails badly in some cases
   return <div>
-    <div class="chinese">
+    <div className="chinese">
       <span>{el.trad} </span>
       <span>{el.simp !== el.trad ? el.simp : zhspace} </span>
+      <span className="pinyin">{hanzi.getPinyin(el.trad)[0]}</span>
     </div>
-    <div class="english">{el.symbol}</div>
+    <div className="english">{el.symbol}</div>
     <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br/>
     {el.period} {el.number} {el.atomic_mass}<br/>
     discovery: {el.discovered_by}<br/>
