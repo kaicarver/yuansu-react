@@ -76,7 +76,7 @@ function Element(props) {
       //console.log("all levels", decomposition);
       decomposition = hanzi.decompose(char, 1);
       console.log("one level", decomposition.components);
-      decomp = decomposition.components.join(" ")
+      decomp = decomposition.components.map(c => c + " " + hanzi.getPinyin(c)[0].toLowerCase()).join(" ");
       decomposition = hanzi.decompose(char, 2);
       console.log("radical components", decomposition.components);
       decomposition = hanzi.decompose(char, 3);
