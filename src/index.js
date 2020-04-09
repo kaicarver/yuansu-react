@@ -41,7 +41,12 @@ function YuansuApp(props) {
 }
 
 function Table(props) {
-  return <div id="table">
+  function handleClick(e) {
+    console.log("no element");
+    document.getElementById('detail').innerHTML =
+      renderToString(<Detail />);
+  }
+  return <div id="table" onClick={handleClick}>
     {props.data.map((el, number) =>
       <Element key={el.symbol} el={el} />
     )}
@@ -49,8 +54,9 @@ function Table(props) {
 }
 
 function Element(props) {
-  // there's probably a bettter way to do this reactive thing
+  // there's probably a better way to do this reactive thing
   function handleClick(e) {
+    e.stopPropagation();
     console.log(Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('\n'));
     document.getElementById('detail').innerHTML =
       renderToString(<Detail key={props.el.symbol} el={props.el} />);
