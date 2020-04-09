@@ -56,10 +56,12 @@ function Table(props) {
 function Element(props) {
   // there's probably a better way to do this reactive thing
   function handleClick(e) {
+    let el = props.el;
     e.stopPropagation();
-    console.log(Object.entries(props.el).map(x => x[0] + ': ' + x[1]).join('\n'));
+    console.log(Object.entries(el).map(x => x[0] + ': ' + x[1]).join('\n'));
+    console.log("pinyin", (hanzi.getPinyin(el.trad) || ['?'])[0]);
     document.getElementById('detail').innerHTML =
-      renderToString(<Detail key={props.el.symbol} el={props.el} />);
+      renderToString(<Detail key={el.symbol} el={el} />);
   }
   return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.trad} </span>
 }
