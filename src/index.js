@@ -117,6 +117,7 @@ function Detail(props) {
     <div className="chinese">
       <span>{el.trad} </span>
       <span>{el.simp !== el.trad ? el.simp : zhspace} </span>
+      <div className="components">金 者</div>
       <div className="pinyin">{(hanzi.getPinyin(el.trad) || ['?'])[0]}</div>
     </div>
     <div className="english">{el.symbol}</div>
