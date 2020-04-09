@@ -77,8 +77,8 @@ function Detail(props) {
     <div className="english">{el.symbol}</div>
     <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br/>
     {el.period} {el.number} {el.atomic_mass}<br/>
-    discovery: {el.discovered_by}<br/>
-    {el.summary}
+    discovery: {el.discovered_by}
+    <div className="summary">{el.summary}</div>
   </div>
 }
 

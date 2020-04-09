@@ -67,6 +67,10 @@ body {
 .english {
   font-size: 200%;
 }
+.summary {
+  font-size: 80%;
+  color: black;
+}
 
 #help {
   color: gray;
