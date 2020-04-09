@@ -57,7 +57,7 @@ function Element(props) {
   // there's probably a better way to do this reactive thing
   function handleClick(e) {
     let el = props.el;
-    let decomp = "";
+    let decomp = "?";
     e.stopPropagation();
     console.log(Object.entries(el).map(x => x[0] + ': ' + x[1]).join('\n'));
     let char = el.trad;
