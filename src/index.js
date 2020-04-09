@@ -117,10 +117,10 @@ function Detail(props) {
   // the hanzi call needs error handling, fails badly in some cases
   return <div>
     <div className="chinese">
-      <span>{el.trad} </span>
-      <span>{el.simp !== el.trad ? el.simp : zhspace} </span>
+      <span className="trad">{el.trad} </span>
+      <span className="simp">{el.simp !== el.trad ? el.simp : zhspace} </span>
+      <span className="pinyin">{(hanzi.getPinyin(el.trad) || ['?'])[0]}</span>
       <div className="components">{props.decomp}</div>
-      <div className="pinyin">{(hanzi.getPinyin(el.trad) || ['?'])[0]}</div>
     </div>
     <div className="english">{el.symbol}</div>
     <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br />

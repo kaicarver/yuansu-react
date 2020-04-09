@@ -60,6 +60,11 @@ body {
 }
 .chinese {
   font-size: 300%;
+  color: black;
+}
+.simp {
+  font-size: 60%;
+  color: gray;
 }
 .components {
   font-size: 80%;
