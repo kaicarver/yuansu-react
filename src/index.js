@@ -27,7 +27,7 @@ function YuansuApp(props) {
       <Table data={periodicData.elements} />
     </div>
     <div id="detail">
-      <div id="help"><Detail/></div>
+      <div id="help"><Detail /></div>
     </div>
     <div>
       Source: <a
@@ -59,53 +59,59 @@ function Element(props) {
     let el = props.el;
     e.stopPropagation();
     console.log(Object.entries(el).map(x => x[0] + ': ' + x[1]).join('\n'));
-    console.log("pinyin", (hanzi.getPinyin(el.trad) || ['?'])[0]);
-    // Character decomposition
-    // 3 levels of decomposition (can specify which type in optional type parameter):
-    // 1 - "Once" (only decomposes character once),
-    // 2 - "Radical" (decomposes character into its lowest radical components),
-    // 3 - "Graphical" (decomposes into lowest forms, will be mostly strokes and small indivisable units)
-    let decomposition;
-    decomposition = hanzi.decompose('爱');
-    console.log(decomposition);
-    decomposition = hanzi.decompose('爱', 1);
-    console.log(decomposition);
-    decomposition = hanzi.decompose('爱', 2);
-    console.log(decomposition);
-    decomposition = hanzi.decompose('爱', 3);
-    console.log(decomposition);
-    decomposition = hanzi.decomposeMany('爱橄黃');
-    console.log(decomposition);
+    let char = el.trad;
+    if (!hanzi.getPinyin(char)) {
+      console.log("unknown element " + char);
+    } else {
+      console.log("pinyin", hanzi.getPinyin(char));
+      // Character decomposition
+      // 3 levels of decomposition (can specify which type in optional type parameter):
+      // 1 - "Once" (only decomposes character once),
+      // 2 - "Radical" (decomposes character into its lowest radical components),
+      // 3 - "Graphical" (decomposes into lowest forms, will be mostly strokes and small indivisable units)
+      let decomposition;
+      decomposition = hanzi.decompose(char);
+      console.log(decomposition);
+      decomposition = hanzi.decompose(char, 1);
+      console.log(decomposition);
+      decomposition = hanzi.decompose(char, 2);
+      console.log(decomposition);
+      decomposition = hanzi.decompose(char, 3);
+      console.log(decomposition);
+      //decomposition = hanzi.decomposeMany('爱橄黃');
+      //console.log(decomposition);
 
-    console.log("Lookup a character in the dictionary:");
-    console.log(hanzi.definitionLookup('雪'));
-    console.log("Search the dictionary based on input (I don't get search type 'only'...):");
-    console.log(hanzi.dictionarySearch('雪'));
-    console.log("Search, then puts entries in three categories by frequency (so really another kind of search?):");
-    console.log(hanzi.getExamples('橄'));
-    console.log("Return an array of characters that are segmented based on a longest match lookup:");
-    console.log(hanzi.segment("我們都是陌生人。"));
-    console.log("Return all possible pinyin data for a character:");
-    console.log(hanzi.getPinyin('的'));
-    console.log("Return frequency data for a character based on the Junda corpus:")
-    console.log(hanzi.getCharacterFrequency('热'));
-    console.log("Get a character based on its position the frequency list:")
-    console.log(hanzi.getCharacterInFrequencyListByPosition(111));
-    console.log("Return an array of characters with the given component:")
-    console.log(hanzi.getCharactersWithComponent('囗'));
-    console.log("Return an object that displays all possible combinations of phonetic regularity relationship of the character to all its components")
-    console.log(hanzi.determinePhoneticRegularity('洋'));
-    console.log("Return a short, usually one-word, meaning of a radical:")
-    console.log(hanzi.getRadicalMeaning('氵'));
+      console.log("Lookup a character in the dictionary:");
+      console.log(hanzi.definitionLookup(char));
+      console.log("Search the dictionary based on input (I don't get search type 'only'...):");
+      console.log(hanzi.dictionarySearch(char));
+      console.log("Search, then puts entries in three categories by frequency (so really another kind of search?):");
+      console.log(hanzi.getExamples(char));
+      //console.log("Return an array of characters that are segmented based on a longest match lookup:");
+      //console.log(hanzi.segment("我們都是陌生人。"));
+      console.log("Return all possible pinyin data for a character:");
+      console.log(hanzi.getPinyin(char));
+      console.log("Return frequency data for a character based on the Junda corpus:")
+      console.log(hanzi.getCharacterFrequency(char));
+      // console.log("Get a character based on its position the frequency list:")
+      // console.log(hanzi.getCharacterInFrequencyListByPosition(111));
+      console.log("Return an array of characters with the given component:")
+      console.log(hanzi.getCharactersWithComponent(char));
+      console.log("Return an object that displays all possible combinations of phonetic regularity relationship of the character to all its components")
+      console.log(hanzi.determinePhoneticRegularity(char));
+      console.log("Return a short, usually one-word, meaning of a radical:")
+      console.log(hanzi.getRadicalMeaning(char));
+    }
     document.getElementById('detail').innerHTML =
       renderToString(<Detail key={el.symbol} el={el} />);
   }
-  return <span className="element" title={props.el.name} onClick={handleClick}>{props.el.trad} </span>
+  return <span className="element" title={props.el.name} onClick={handleClick}>
+    {props.el.trad} </span>
 }
 
 function Detail(props) {
   const zhspace = "　";
-  let el = props.el ? props.el : {trad:"元素週期表", simp:"", symbol:"Periodic Table", discovered_by:"Dmitri Mendeleev"};
+  let el = props.el ? props.el : { trad: "元素週期表", simp: "", symbol: "Periodic Table", discovered_by: "Dmitri Mendeleev" };
   // the hanzi call needs error handling, fails badly in some cases
   return <div>
     <div className="chinese">
@@ -114,8 +120,8 @@ function Detail(props) {
       <div className="pinyin">{(hanzi.getPinyin(el.trad) || ['?'])[0]}</div>
     </div>
     <div className="english">{el.symbol}</div>
-    <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br/>
-    {el.period} {el.number} {el.atomic_mass}<br/>
+    <a href={el.source} target="_blank" rel="noopener noreferrer">{el.name}</a><br />
+    {el.period} {el.number} {el.atomic_mass}<br />
     discovery: {el.discovered_by}
     <div className="summary">{el.summary}</div>
   </div>
