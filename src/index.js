@@ -57,6 +57,7 @@ function Element(props) {
   // there's probably a better way to do this reactive thing
   function handleClick(e) {
     let el = props.el;
+    let decomp = "";
     e.stopPropagation();
     console.log(Object.entries(el).map(x => x[0] + ': ' + x[1]).join('\n'));
     let char = el.trad;
@@ -69,18 +70,19 @@ function Element(props) {
       // 1 - "Once" (only decomposes character once),
       // 2 - "Radical" (decomposes character into its lowest radical components),
       // 3 - "Graphical" (decomposes into lowest forms, will be mostly strokes and small indivisable units)
+      console.log("Decompose a character in the dictionary:");
       let decomposition;
-      decomposition = hanzi.decompose(char);
-      console.log(decomposition);
+      //decomposition = hanzi.decompose(char);
+      //console.log("all levels", decomposition);
       decomposition = hanzi.decompose(char, 1);
-      console.log(decomposition);
+      console.log("one level", decomposition.components);
+      decomp = decomposition.components.join(" ")
       decomposition = hanzi.decompose(char, 2);
-      console.log(decomposition);
+      console.log("radical components", decomposition.components);
       decomposition = hanzi.decompose(char, 3);
-      console.log(decomposition);
+      console.log("smallest parts: strokes", decomposition.components);
       //decomposition = hanzi.decomposeMany('爱橄黃');
       //console.log(decomposition);
-
       console.log("Lookup a character in the dictionary:");
       console.log(hanzi.definitionLookup(char));
       console.log("Search the dictionary based on input (I don't get search type 'only'...):");
@@ -103,7 +105,7 @@ function Element(props) {
       console.log(hanzi.getRadicalMeaning(char));
     }
     document.getElementById('detail').innerHTML =
-      renderToString(<Detail key={el.symbol} el={el} />);
+      renderToString(<Detail key={el.symbol} el={el} decomp={decomp}/>);
   }
   return <span className="element" title={props.el.name} onClick={handleClick}>
     {props.el.trad} </span>
@@ -117,7 +119,7 @@ function Detail(props) {
     <div className="chinese">
       <span>{el.trad} </span>
       <span>{el.simp !== el.trad ? el.simp : zhspace} </span>
-      <div className="components">金 者</div>
+      <div className="components">{props.decomp}</div>
       <div className="pinyin">{(hanzi.getPinyin(el.trad) || ['?'])[0]}</div>
     </div>
     <div className="english">{el.symbol}</div>
