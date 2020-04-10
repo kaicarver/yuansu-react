@@ -53,10 +53,15 @@ function Table(props) {
   </div>
 }
 
-function Element(props) {
+class Element extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {active: false};
+  }
   // there's probably a better way to do this reactive thing
-  function handleClick(e) {
-    let el = props.el;
+  handleClick = (e) => {
+    this.setState({active: true});
+    let el = this.props.el;
     let decomp = "?";
     e.stopPropagation();
     console.log(Object.entries(el).map(x => x[0] + ': ' + x[1]).join('\n'));
@@ -107,8 +112,10 @@ function Element(props) {
     document.getElementById('detail').innerHTML =
       renderToString(<Detail key={el.symbol} el={el} decomp={decomp}/>);
   }
-  return <span className="element active" title={props.el.name} onClick={handleClick}>
-    {props.el.trad} </span>
+  render() {
+    return <span className={'element' + (this.state.active ? ' active' : '')} title={this.props.el.name} onClick={this.handleClick}>
+      {this.props.el.trad}</span>
+  }
 }
 
 function Detail(props) {
