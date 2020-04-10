@@ -107,7 +107,7 @@ function Element(props) {
     document.getElementById('detail').innerHTML =
       renderToString(<Detail key={el.symbol} el={el} decomp={decomp}/>);
   }
-  return <span className="element" title={props.el.name} onClick={handleClick}>
+  return <span className="element active" title={props.el.name} onClick={handleClick}>
     {props.el.trad} </span>
 }
 

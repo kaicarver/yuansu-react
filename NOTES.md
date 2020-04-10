@@ -15,7 +15,8 @@ This is just to document various choices I made along the way of doing this.
 I had this annoying problem that `create-react` in its various forms was not working for me.
 
 After installing the latest version of node and using `nvm`, current versions:
-```
+
+```bash
 $ nvm -version
 0.353
 $ node --version
@@ -23,6 +24,7 @@ v13.11.0
 $ npm --version
 6.13.7
 ```
+
 and trying a bunch of the solutions listed here
 
 https://stackoverflow.com/questions/59188624/template-not-provided-using-create-react-app
@@ -66,7 +68,7 @@ and Description Lists `<dl>`, `<dt>`, `<dd>`
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
 
 He also mention the `periodic-table` npm package,
-which may or may not be redundant with the periodic data 
+which may or may not be redundant with the periodic data
 mentioned above.
 
 https://www.npmjs.com/package/periodic-table
