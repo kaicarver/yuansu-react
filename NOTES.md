@@ -80,8 +80,12 @@ https://levelup.gitconnected.com/how-i-made-the-periodic-table-with-css-grid-and
 ## TODO list
 
 - highlight the selected element in the table
+  - and unhighlight...
 - use arrow keys to navigate table
 - show different colors if (second) component pronunciation or tone is different from character pronunciation
 - move Github link to bottom of page
-- add more credits links, like I did in the Svelte version
+- add more credits links, like I did in the Svelte version 
+- change URL according to which character is clicked
+- probably need to precalculate everything beforehand, there are cases that cannot reasonably be automated, such as 金 汞 鉛 鿬 鉝 磷 鋦 鉳
+  - just add more Chinese info to the `periodicData.elements` array
   
