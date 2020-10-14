@@ -24,3 +24,8 @@ I went through 3 overlapping phases:
 3. Maybe this is better than the alphabet
 
 If you read between the lines, a lot of this is WHY CAN'T I LEARN THIS?!
+
+## Miscellaneous
+
+This looks worth reading:
+https://en.wikipedia.org/wiki/Chemical_elements_in_East_Asian_languages
