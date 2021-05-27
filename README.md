@@ -1,3 +1,7 @@
+[recent discussion of Chinese names for elements on Language Log](https://languagelog.ldc.upenn.edu/nll/?p=18877)
+
+***
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
